@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="css/login.css" rel="stylesheet">
+    <script src="js/login.js"></script>
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="js/lightbox-plus-jquery.js"></script>
+
+</head>
+<body>
+<div class="form_cont">
+    <form id="loginbox" class="form-3" >
+
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter login" name="uname" required>
+            <label><b>Password</b></label>
+            <input type="text" placeholder="Enter Password" name="psw" required>
+
+            <input type="button" class="btn-submit" name="login_button" onclick="main.log_in()" value="Login">
+
+            <input type="checkbox" checked="checked"> Remember me
+        </div>
+        <div class="container">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw"><a href="#">Fogot password?</a> </span>
+        </div>
+        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+            <h3>Sign Up Here</h3>
+        </a>
+    </form>
+    <form  id="signupbox" class="form-3" style="display: none">
+        <h4>Just skate with us!</h4>
+        <p>
+            <label for="logReg">Login</label>
+            <input type="text" id="logReg" name="login" placeholder="Login" required>
+        </p>
+        <p>
+            <label for="mailReg">Email</label>
+            <input type="text" id="mailReg" name="mail" placeholder="Email" required>
+        </p>
+        <p>
+            <label for="passReg">Password</label>
+            <input type="password" id="passReg" name='password' placeholder="psw" required>
+        </p>
+
+        <p>
+            <input type="button" class="btn-submit" onclick="main.registration()" name="signin_button" value="Registration">
+        </p>
+        Have account?
+        <a href="#" onClick="$('#signupbox').hide(); $('#loginbox').show()">
+            Sign In
+        </a>
+    </form>
+</div>
+
+</body>
+</html>
