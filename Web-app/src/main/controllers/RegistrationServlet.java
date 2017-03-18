@@ -18,8 +18,8 @@ public class RegistrationServlet extends APIHandlerServlets.APIRequestHandler{
 
     @Override
     protected JSONStreamAware processRequest(HttpServletRequest request) throws Exception {
-        String login = request.getParameter("log");
-        String pass = request.getParameter("pass");
+        String login = request.getParameter("login");
+        String pass = request.getParameter("password");
         String email = request.getParameter("mail");
         User user = new User();
         user.setLogin(login);
