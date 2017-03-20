@@ -6,11 +6,12 @@ var main = {
         var log = document.getElementById("logReg").value;
         var mail = document.getElementById("mailReg").value;
         var pass = document.getElementById("passReg").value;
+        var uname = document.getElementById("user_name").value;
         $.ajax({
             type: "POST",
             url: "/SkateCom",
             dataType: "json",
-            data: {requestType: "registration", login: log, password: pass, email: mail},
+            data: {requestType: "registration", login: log, password: pass, email: mail, name: uname},
             success: function (data) {
                 console.log(data);
                 document.location.href='index.html';
@@ -19,8 +20,8 @@ var main = {
     },
 
     log_in: function () {
-        var log = document.getElementsByName("uname").value;
-        var pass = document.getElementsByName("psw").value;
+        var log = document.getElementById("login").value;
+        var pass = document.getElementById("pass").value;
         $.ajax({
             type: "POST",
             url: "/SkateCom",

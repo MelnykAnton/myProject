@@ -15,10 +15,10 @@
     <form id="loginbox" class="form-3" >
 
         <div class="container">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter login" name="uname" required>
-            <label><b>Password</b></label>
-            <input type="text" placeholder="Enter Password" name="psw" required>
+            <label><b>Username</b>
+            <input type="text" id="login" placeholder="Enter login" name="name" required></label>
+            <label><b>Password</b>
+            <input type="text" id="pass" placeholder="Enter Password" name="psw" required></label>
 
             <input type="button" class="btn-submit" name="login_button" onclick="main.log_in()" value="Login">
 
@@ -45,6 +45,10 @@
         <p>
             <label for="passReg">Password</label>
             <input type="password" id="passReg" name='password' placeholder="psw" required>
+        </p>
+        <p>
+            <label for="user_name">Name</label>
+            <input type="text" id="user_name" name="name_user" placeholder="name" required>
         </p>
 
         <p>
