@@ -69,10 +69,11 @@ public class User {
         return name;
     }
 
-    public User(String password, String login, String name) {
+    public User(String password, String login, String name, String eMail) {
         this.password = password;
         this.login = login;
         this.name = name;
+        this.eMail = eMail;
     }
 
     @OneToMany(mappedBy = "user")

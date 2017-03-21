@@ -2,6 +2,7 @@ package controllers;
 
 import dao.entity.User;
 import hibernate.Factory;
+import org.json.simple.JSONObject;
 import org.json.simple.JSONStreamAware;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,13 +23,19 @@ public class RegistrationServlet extends APIHandlerServlets.APIRequestHandler{
         String pass = request.getParameter("password");
         String email = request.getParameter("email");
         String name = request.getParameter("name");
-        User user = new User();
-        user.setLogin(login);
-        user.setPassword(pass);
-        user.seteMail(email);
-        user.setName(name);
-        Factory.getInstance().getUserMethods().addObject(user);
+        User user = new User(pass,login,name,email);
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+            Factory.getInstance().getUserMethods().addObject(user);
+        }catch (Exception e){
+            jsonObject.put("login","error");
+            jsonObject.put("indexNumber","not_exist");
+            return jsonObject;
+        }
+        jsonObject.put("login",user.getLogin());
+        jsonObject.put("indexNumber",user.getId());
         System.err.print("work");
-        return null;
+        return jsonObject;
     }
 }

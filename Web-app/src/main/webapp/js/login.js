@@ -13,8 +13,12 @@ var main = {
             dataType: "json",
             data: {requestType: "registration", login: log, password: pass, email: mail, name: uname},
             success: function (data) {
-                console.log(data);
-                document.location.href='index.html';
+                if(data.login == "error"){
+                    document.location.href = 'errorPage.html';
+                }else {
+                    document.location.href = 'index.html';
+                }
+
             }
         });
     },
@@ -28,7 +32,7 @@ var main = {
             dataType: "json",
             data: {requestType: "login", login: log, password: pass},
             success: function (data) {
-                if(data.name == "error")
+                if(data.login == "error")
                     document.location.href = 'errorPage.html';
                 else
                     document.location.href = 'index.html';
